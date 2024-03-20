@@ -24,6 +24,8 @@
 		0152D1CB2BAA1D0E001CBD30 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CA2BAA1D0E001CBD30 /* RegistrationViewController.swift */; };
 		0152D1CD2BAA1E18001CBD30 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CC2BAA1E18001CBD30 /* AuthCoordinator.swift */; };
 		0152D1CF2BAA2277001CBD30 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CE2BAA2277001CBD30 /* UINavigationController+Extension.swift */; };
+		017517722BAB798300E876C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017517712BAB798300E876C2 /* HomeViewController.swift */; };
+		017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017517742BAB79E500E876C2 /* HomeFactory.swift */; };
 		018709CE2BA9FD3800B070E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709CD2BA9FD3800B070E7 /* AppDelegate.swift */; };
 		018709D02BA9FD3800B070E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709CF2BA9FD3800B070E7 /* SceneDelegate.swift */; };
 		018709D22BA9FD3800B070E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709D12BA9FD3800B070E7 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 		018709EF2BA9FF5A00B070E7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709EE2BA9FF5A00B070E7 /* MainCoordinator.swift */; };
 		018709F12BA9FF6700B070E7 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709F02BA9FF6700B070E7 /* StartCoordinator.swift */; };
 		018709F52BA9FF8A00B070E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709F42BA9FF8A00B070E7 /* LoginViewController.swift */; };
+		01F5D9E42BAB851C009F24CD /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9E32BAB851C009F24CD /* Header.swift */; };
+		900BA9EAC7BC633E58C1AFAF /* Pods_FocusCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,8 @@
 		0152D1CA2BAA1D0E001CBD30 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		0152D1CC2BAA1E18001CBD30 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		0152D1CE2BAA2277001CBD30 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		017517712BAB798300E876C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		017517742BAB79E500E876C2 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		018709CA2BA9FD3800B070E7 /* FocusCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018709CD2BA9FD3800B070E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		018709CF2BA9FD3800B070E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +74,10 @@
 		018709EE2BA9FF5A00B070E7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		018709F02BA9FF6700B070E7 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		018709F42BA9FF8A00B070E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		01F5D9E32BAB851C009F24CD /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		1F839021D4159BC88FAD2509 /* Pods-FocusCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.debug.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.debug.xcconfig"; sourceTree = "<group>"; };
+		33CA11869971B7F0E35FA7BC /* Pods-FocusCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.release.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.release.xcconfig"; sourceTree = "<group>"; };
+		608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900BA9EAC7BC633E58C1AFAF /* Pods_FocusCraft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +116,7 @@
 				0152D1C42BAA12C1001CBD30 /* TextFieldStack.swift */,
 				0152D1C62BAA1667001CBD30 /* AuthButton.swift */,
 				0152D1C82BAA1C51001CBD30 /* CustomAttributedText.swift */,
+				01F5D9E32BAB851C009F24CD /* Header.swift */,
 			);
 			path = ViewBuilder;
 			sourceTree = "<group>";
@@ -145,11 +157,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		017517702BAB795F00E876C2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				017517712BAB798300E876C2 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		017517732BAB79D200E876C2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				017517742BAB79E500E876C2 /* HomeFactory.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		018709C12BA9FD3800B070E7 = {
 			isa = PBXGroup;
 			children = (
 				018709CC2BA9FD3800B070E7 /* FocusCraft */,
 				018709CB2BA9FD3800B070E7 /* Products */,
+				E18020F522ABEECAEC17F87C /* Pods */,
+				868FFBD79F527B3C155EEFC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +232,7 @@
 		018709E32BA9FD6E00B070E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				017517702BAB795F00E876C2 /* Home */,
 				0152D1AF2BAA0661001CBD30 /* ViewBuilder */,
 				018709F22BA9FF6D00B070E7 /* Login */,
 				018709F32BA9FF7500B070E7 /* Registration */,
@@ -240,6 +271,7 @@
 		018709EB2BA9FE0300B070E7 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				017517732BAB79D200E876C2 /* Home */,
 				0152D1AC2BAA033E001CBD30 /* Login */,
 			);
 			path = Factories;
@@ -261,6 +293,23 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		868FFBD79F527B3C155EEFC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E18020F522ABEECAEC17F87C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F839021D4159BC88FAD2509 /* Pods-FocusCraft.debug.xcconfig */,
+				33CA11869971B7F0E35FA7BC /* Pods-FocusCraft.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 018709DE2BA9FD3900B070E7 /* Build configuration list for PBXNativeTarget "FocusCraft" */;
 			buildPhases = (
+				A9F338573615116304223A6B /* [CP] Check Pods Manifest.lock */,
 				018709C62BA9FD3800B070E7 /* Sources */,
 				018709C72BA9FD3800B070E7 /* Frameworks */,
 				018709C82BA9FD3800B070E7 /* Resources */,
+				3D3B11D4F29064E4A22E701C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +380,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D3B11D4F29064E4A22E701C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FocusCraft/Pods-FocusCraft-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FocusCraft/Pods-FocusCraft-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FocusCraft/Pods-FocusCraft-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9F338573615116304223A6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FocusCraft-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		018709C62BA9FD3800B070E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -340,12 +433,15 @@
 				0152D1CD2BAA1E18001CBD30 /* AuthCoordinator.swift in Sources */,
 				018709ED2BA9FE2700B070E7 /* LoginCoordinator.swift in Sources */,
 				0152D1C32BAA1222001CBD30 /* UIColor+Extension.swift in Sources */,
+				017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */,
 				0152D1AE2BAA034E001CBD30 /* AuthentificationFactory.swift in Sources */,
 				018709EF2BA9FF5A00B070E7 /* MainCoordinator.swift in Sources */,
 				0152D1C72BAA1667001CBD30 /* AuthButton.swift in Sources */,
 				0152D1B12BAA067D001CBD30 /* AppIcon.swift in Sources */,
 				018709E72BA9FDCA00B070E7 /* AppCoordinator.swift in Sources */,
+				017517722BAB798300E876C2 /* HomeViewController.swift in Sources */,
 				018709F12BA9FF6700B070E7 /* StartCoordinator.swift in Sources */,
+				01F5D9E42BAB851C009F24CD /* Header.swift in Sources */,
 				018709D22BA9FD3800B070E7 /* ViewController.swift in Sources */,
 				018709EA2BA9FDED00B070E7 /* Coordinator.swift in Sources */,
 				0152D1C52BAA12C1001CBD30 /* TextFieldStack.swift in Sources */,
@@ -411,7 +507,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -474,7 +570,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -495,6 +591,7 @@
 		};
 		018709DF2BA9FD3900B070E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F839021D4159BC88FAD2509 /* Pods-FocusCraft.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -522,6 +619,7 @@
 		};
 		018709E02BA9FD3900B070E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33CA11869971B7F0E35FA7BC /* Pods-FocusCraft.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

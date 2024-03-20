@@ -10,6 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var coordinator: AuthCoordinator?
+    var finishFlow: boolClosure?
     
     lazy var appIcon = AppIcon()
     
@@ -30,12 +31,17 @@ class LoginViewController: UIViewController {
         
         setupElements()
         signUpLabelSettings()
+        authButtonSettings()
     }
     
     func signUpLabelSettings() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(navigationManager))
         toSignUpLabel.isUserInteractionEnabled = true
         toSignUpLabel.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    func authButtonSettings() {
+        authButton.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
     
     func setupElements() {
@@ -72,6 +78,10 @@ class LoginViewController: UIViewController {
     
     @objc private func navigationManager() {
         coordinator?.navigate(type: .register, router: .push)
+    }
+    
+    @objc private func login() {
+        self.finishFlow?(true)
     }
     
 }

@@ -1,0 +1,6 @@
+framework module Pods_FocusCraft {
+  umbrella header "Pods-FocusCraft-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -10,6 +10,7 @@ import UIKit
 class RegistrationViewController: UIViewController {
     
     var coordinator: AuthCoordinator?
+    var finishFlow: boolClosure?
     
     lazy var appIcon = AppIcon()
     
@@ -33,15 +34,20 @@ class RegistrationViewController: UIViewController {
         
         setupElements()
         signInLabelSettings()
+        signUpButtonSettings()
     }
     
-    func signInLabelSettings() {
+    private func signInLabelSettings() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(navigationManager))
         toSignInLabel.isUserInteractionEnabled = true
         toSignInLabel.addGestureRecognizer(gestureRecognizer)
     }
     
-    func setupElements() {
+    private func signUpButtonSettings() {
+        authButton.addTarget(self, action: #selector(signUp), for: .touchUpInside)
+    }
+    
+    private func setupElements() {
         view.addSubview(appIcon)
         view.addSubview(emailStack)
         view.addSubview(passwordStack)
@@ -82,6 +88,10 @@ class RegistrationViewController: UIViewController {
     
     @objc private func navigationManager() {
         coordinator?.navigate(type: .login, router: .pop)
+    }
+    
+    @objc private func signUp() {
+        self.finishFlow?(true)
     }
     
 }

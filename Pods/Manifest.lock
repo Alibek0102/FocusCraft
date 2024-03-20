@@ -1,0 +1,24 @@
+PODS:
+  - IQKeyboardManagerSwift (7.0.1)
+  - LZViewPager (1.3.1):
+    - SnapKit (~> 5.6.0)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - LZViewPager
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - LZViewPager
+    - SnapKit
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 7f6b1b1d1497855d2beea7f2f10ffcc6978525b1
+  LZViewPager: ff4dbc601c4591e5a41bf39b0998218679e0673f
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 7fbb1a182d35dd3742990f291c277cd35e67576c
+
+COCOAPODS: 1.12.1

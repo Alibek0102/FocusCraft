@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum navigationEvents {
+enum AuthNavigationEvents {
     case login
     case register
 }
 
 protocol AuthCoordinator {
-    func navigate(type: navigationEvents, router: NavigationType)
+    func navigate(type: AuthNavigationEvents, router: NavigationType)
 }

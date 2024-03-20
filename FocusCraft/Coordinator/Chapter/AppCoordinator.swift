@@ -10,17 +10,33 @@ import UIKit
 class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    var isAuth: Bool = false
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        loginFlow()
+        if isAuth == true {
+            self.mainFlow()
+        } else {
+            self.loginFlow()
+        }
     }
     
     func loginFlow() {
         let loginCoordinator = LoginCoordinator(navigationController: self.navigationController)
+        loginCoordinator.finishFLow = { isDone in
+            if isDone == true {
+                self.isAuth = true
+                self.start()
+            }
+        }
         loginCoordinator.start()
+    }
+    
+    func mainFlow() {
+        let mainCoordinator = MainCoordinator(navigationController: self.navigationController)
+        mainCoordinator.start()
     }
 }

@@ -22,7 +22,7 @@ class LoginCoordinator: Coordinator, SubCoordinator, AuthCoordinator {
         loginScreen()
     }
     
-    func navigate(type: navigationEvents, router: NavigationType) {
+    func navigate(type: AuthNavigationEvents, router: NavigationType) {
         switch type {
         case .login:
             loginScreen(router)
@@ -33,15 +33,29 @@ class LoginCoordinator: Coordinator, SubCoordinator, AuthCoordinator {
         }
     }
     
-    func loginScreen(_ type: NavigationType = .push) {
+    private func loginScreen(_ type: NavigationType = .push) {
         let viewController = module.createLoginViewController()
         viewController.coordinator = self
+        
+        viewController.finishFlow = { isDone in
+            if isDone == true {
+                self.finishFLow?(true)
+            }
+        }
+        
         navigationController.navigate(viewController: viewController, type: type)
     }
     
-    func registrationScreen(_ type: NavigationType = .push) {
+    private func registrationScreen(_ type: NavigationType = .push) {
         let viewController = module.createRegistrationScreen()
         viewController.coordinator = self
+        
+        viewController.finishFlow = { isDone in
+            if isDone == true {
+                self.finishFLow?(true)
+            }
+        }
+        
         navigationController.navigate(viewController: viewController, type: type)
     }
     
