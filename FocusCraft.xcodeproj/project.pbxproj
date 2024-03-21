@@ -46,6 +46,8 @@
 		01F5D9F72BAC33AF009F24CD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */; };
 		01F5D9F92BAC6B04009F24CD /* TaskItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F82BAC6B04009F24CD /* TaskItemCell.swift */; };
 		01F5D9FB2BAC6BC5009F24CD /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9FA2BAC6BC5009F24CD /* CheckBox.swift */; };
+		01F5D9FF2BAC8116009F24CD /* MenuEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9FE2BAC8116009F24CD /* MenuEvents.swift */; };
+		01F5DA012BAC8253009F24CD /* HomeScreenEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5DA002BAC8253009F24CD /* HomeScreenEvents.swift */; };
 		900BA9EAC7BC633E58C1AFAF /* Pods_FocusCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,8 @@
 		01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		01F5D9F82BAC6B04009F24CD /* TaskItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemCell.swift; sourceTree = "<group>"; };
 		01F5D9FA2BAC6BC5009F24CD /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		01F5D9FE2BAC8116009F24CD /* MenuEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEvents.swift; sourceTree = "<group>"; };
+		01F5DA002BAC8253009F24CD /* HomeScreenEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenEvents.swift; sourceTree = "<group>"; };
 		1F839021D4159BC88FAD2509 /* Pods-FocusCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.debug.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.debug.xcconfig"; sourceTree = "<group>"; };
 		33CA11869971B7F0E35FA7BC /* Pods-FocusCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.release.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.release.xcconfig"; sourceTree = "<group>"; };
 		608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +216,7 @@
 		018709CC2BA9FD3800B070E7 /* FocusCraft */ = {
 			isa = PBXGroup;
 			children = (
+				01F5D9FC2BAC80F2009F24CD /* Enums */,
 				0152D1C12BAA120E001CBD30 /* Extensions */,
 				0152D1BA2BAA0756001CBD30 /* Customize */,
 				0152D1B22BAA06A3001CBD30 /* Resources */,
@@ -365,6 +370,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		01F5D9FC2BAC80F2009F24CD /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9FD2BAC80FE009F24CD /* UserInterface */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		01F5D9FD2BAC80FE009F24CD /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9FE2BAC8116009F24CD /* MenuEvents.swift */,
+				01F5DA002BAC8253009F24CD /* HomeScreenEvents.swift */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
 		868FFBD79F527B3C155EEFC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,8 +532,10 @@
 				017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */,
 				0152D1AE2BAA034E001CBD30 /* AuthentificationFactory.swift in Sources */,
 				01F5D9FB2BAC6BC5009F24CD /* CheckBox.swift in Sources */,
+				01F5DA012BAC8253009F24CD /* HomeScreenEvents.swift in Sources */,
 				018709EF2BA9FF5A00B070E7 /* MainCoordinator.swift in Sources */,
 				01F5D9F32BAC27F5009F24CD /* TaskFactory.swift in Sources */,
+				01F5D9FF2BAC8116009F24CD /* MenuEvents.swift in Sources */,
 				01F5D9E72BAC268B009F24CD /* Section.swift in Sources */,
 				0152D1C72BAA1667001CBD30 /* AuthButton.swift in Sources */,
 				0152D1B12BAA067D001CBD30 /* AppIcon.swift in Sources */,

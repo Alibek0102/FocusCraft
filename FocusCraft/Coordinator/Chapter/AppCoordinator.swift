@@ -37,6 +37,13 @@ class AppCoordinator: Coordinator {
     
     func mainFlow() {
         let mainCoordinator = MainCoordinator(navigationController: self.navigationController)
+        mainCoordinator.finishFLow = { isExit in
+            if isExit == true {
+                self.isAuth = false
+                self.start()
+            }
+        }
+        
         mainCoordinator.start()
     }
 }

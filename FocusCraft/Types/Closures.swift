@@ -7,4 +7,6 @@
 
 import Foundation
 
-typealias boolClosure = ((Bool) -> ())
+typealias boolClosure = ((Bool) -> Void)
+typealias menuClosure = ((MenuEvents) -> Void)
+typealias homeScreenClosure = ((HomeScreenEvents) -> Void)

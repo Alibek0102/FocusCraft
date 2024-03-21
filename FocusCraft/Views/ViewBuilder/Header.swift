@@ -9,6 +9,8 @@ import UIKit
 
 class Header: UIView {
     
+    var menuClosure: menuClosure?
+    
     lazy var appIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .listMaker
@@ -82,11 +84,11 @@ class Header: UIView {
     
     func setActionsForButton() {
         let showProfile = UIAction(title: "Profile", image: UIImage(systemName: "person")) { action in
-            print("profile")
+            self.menuClosure?(.profile)
         }
         
         let exitFromAccount = UIAction(title: "Exit", image: UIImage(systemName: "door.right.hand.open")) { action in
-            print("exit")
+            self.menuClosure?(.exit)
         }
         
         let menu = UIMenu(children: [showProfile, exitFromAccount])

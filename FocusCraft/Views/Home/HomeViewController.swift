@@ -10,6 +10,8 @@ import LZViewPager
 
 class HomeViewController: UIViewController {
     
+    var homeScreenEvents: homeScreenClosure?
+    
     lazy var customHeader = Header()
     lazy var module = TaskFactory()
     
@@ -18,10 +20,6 @@ class HomeViewController: UIViewController {
         viewPager.translatesAutoresizingMaskIntoConstraints = false
         return viewPager
     }()
-    
-//    lazy var addTaskButton: UIButton = {
-//        
-//    }()
     
     private var subcontrollers: [UIViewController] = []
     
@@ -37,6 +35,15 @@ class HomeViewController: UIViewController {
         self.setupHeader()
         self.viewPagerSetup()
         self.setupViewControllers()
+        
+        customHeader.menuClosure = { event in
+            switch event {
+            case .profile:
+                self.homeScreenEvents?(.profile)
+            case .exit:
+                self.homeScreenEvents?(.exit)
+            }
+        }
         
     }
     

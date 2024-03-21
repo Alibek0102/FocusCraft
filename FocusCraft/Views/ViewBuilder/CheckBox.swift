@@ -23,11 +23,15 @@ class CheckBox: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.isChecked = false
-        self.setImage(.nonChecked, for: .normal)
+        self.setStartValue()
         self.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
         
         self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setStartValue() {
+        self.isChecked = false
+        self.setImage(.nonChecked, for: .normal)
     }
     
     required init?(coder: NSCoder) {
