@@ -14,15 +14,15 @@ class Header: UIView {
         imageView.image = .listMaker
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         return imageView
     }()
     
     lazy var appName: UILabel = {
         let label = UILabel()
         label.text = "FocusCraft"
-        label.font = AppFont.createFont(type: .bold, size: 18)
+        label.font = AppFont.createFont(type: .bold, size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

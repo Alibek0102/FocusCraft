@@ -38,6 +38,12 @@
 		018709F12BA9FF6700B070E7 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709F02BA9FF6700B070E7 /* StartCoordinator.swift */; };
 		018709F52BA9FF8A00B070E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709F42BA9FF8A00B070E7 /* LoginViewController.swift */; };
 		01F5D9E42BAB851C009F24CD /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9E32BAB851C009F24CD /* Header.swift */; };
+		01F5D9E72BAC268B009F24CD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9E62BAC268B009F24CD /* Section.swift */; };
+		01F5D9ED2BAC2726009F24CD /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9EC2BAC2726009F24CD /* AllTasksViewController.swift */; };
+		01F5D9EF2BAC2731009F24CD /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9EE2BAC2731009F24CD /* WorkViewController.swift */; };
+		01F5D9F12BAC2741009F24CD /* OtherTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F02BAC2741009F24CD /* OtherTasksViewController.swift */; };
+		01F5D9F32BAC27F5009F24CD /* TaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F22BAC27F5009F24CD /* TaskFactory.swift */; };
+		01F5D9F72BAC33AF009F24CD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */; };
 		900BA9EAC7BC633E58C1AFAF /* Pods_FocusCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +81,12 @@
 		018709F02BA9FF6700B070E7 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		018709F42BA9FF8A00B070E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		01F5D9E32BAB851C009F24CD /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		01F5D9E62BAC268B009F24CD /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		01F5D9EC2BAC2726009F24CD /* AllTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
+		01F5D9EE2BAC2731009F24CD /* WorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
+		01F5D9F02BAC2741009F24CD /* OtherTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTasksViewController.swift; sourceTree = "<group>"; };
+		01F5D9F22BAC27F5009F24CD /* TaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFactory.swift; sourceTree = "<group>"; };
+		01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		1F839021D4159BC88FAD2509 /* Pods-FocusCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.debug.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.debug.xcconfig"; sourceTree = "<group>"; };
 		33CA11869971B7F0E35FA7BC /* Pods-FocusCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.release.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.release.xcconfig"; sourceTree = "<group>"; };
 		608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				017517742BAB79E500E876C2 /* HomeFactory.swift */,
+				01F5D9F22BAC27F5009F24CD /* TaskFactory.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -225,6 +238,7 @@
 		018709E22BA9FD5400B070E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01F5D9E52BAC2663009F24CD /* State */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +246,7 @@
 		018709E32BA9FD6E00B070E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01F5D9E82BAC26E5009F24CD /* Task */,
 				017517702BAB795F00E876C2 /* Home */,
 				0152D1AF2BAA0661001CBD30 /* ViewBuilder */,
 				018709F22BA9FF6D00B070E7 /* Login */,
@@ -291,6 +306,57 @@
 				0152D1CA2BAA1D0E001CBD30 /* RegistrationViewController.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		01F5D9E52BAC2663009F24CD /* State */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9E62BAC268B009F24CD /* Section.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		01F5D9E82BAC26E5009F24CD /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9F42BAC2EF9009F24CD /* Cells */,
+				01F5D9EB2BAC270F009F24CD /* Other */,
+				01F5D9EA2BAC2703009F24CD /* Work */,
+				01F5D9E92BAC26FE009F24CD /* All */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		01F5D9E92BAC26FE009F24CD /* All */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9EC2BAC2726009F24CD /* AllTasksViewController.swift */,
+			);
+			path = All;
+			sourceTree = "<group>";
+		};
+		01F5D9EA2BAC2703009F24CD /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9EE2BAC2731009F24CD /* WorkViewController.swift */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
+		01F5D9EB2BAC270F009F24CD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9F02BAC2741009F24CD /* OtherTasksViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		01F5D9F42BAC2EF9009F24CD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		868FFBD79F527B3C155EEFC5 /* Frameworks */ = {
@@ -428,14 +494,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				018709F52BA9FF8A00B070E7 /* LoginViewController.swift in Sources */,
+				01F5D9ED2BAC2726009F24CD /* AllTasksViewController.swift in Sources */,
 				0152D1A72BAA020D001CBD30 /* SubCoordinator.swift in Sources */,
 				0152D1BC2BAA0769001CBD30 /* AppFont.swift in Sources */,
 				0152D1CD2BAA1E18001CBD30 /* AuthCoordinator.swift in Sources */,
 				018709ED2BA9FE2700B070E7 /* LoginCoordinator.swift in Sources */,
+				01F5D9F12BAC2741009F24CD /* OtherTasksViewController.swift in Sources */,
 				0152D1C32BAA1222001CBD30 /* UIColor+Extension.swift in Sources */,
 				017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */,
 				0152D1AE2BAA034E001CBD30 /* AuthentificationFactory.swift in Sources */,
 				018709EF2BA9FF5A00B070E7 /* MainCoordinator.swift in Sources */,
+				01F5D9F32BAC27F5009F24CD /* TaskFactory.swift in Sources */,
+				01F5D9E72BAC268B009F24CD /* Section.swift in Sources */,
 				0152D1C72BAA1667001CBD30 /* AuthButton.swift in Sources */,
 				0152D1B12BAA067D001CBD30 /* AppIcon.swift in Sources */,
 				018709E72BA9FDCA00B070E7 /* AppCoordinator.swift in Sources */,
@@ -443,12 +513,14 @@
 				018709F12BA9FF6700B070E7 /* StartCoordinator.swift in Sources */,
 				01F5D9E42BAB851C009F24CD /* Header.swift in Sources */,
 				018709D22BA9FD3800B070E7 /* ViewController.swift in Sources */,
+				01F5D9F72BAC33AF009F24CD /* HeaderCell.swift in Sources */,
 				018709EA2BA9FDED00B070E7 /* Coordinator.swift in Sources */,
 				0152D1C52BAA12C1001CBD30 /* TextFieldStack.swift in Sources */,
 				018709CE2BA9FD3800B070E7 /* AppDelegate.swift in Sources */,
 				018709D02BA9FD3800B070E7 /* SceneDelegate.swift in Sources */,
 				0152D1CF2BAA2277001CBD30 /* UINavigationController+Extension.swift in Sources */,
 				0152D1C02BAA1123001CBD30 /* AppColors.swift in Sources */,
+				01F5D9EF2BAC2731009F24CD /* WorkViewController.swift in Sources */,
 				0152D1C92BAA1C51001CBD30 /* CustomAttributedText.swift in Sources */,
 				0152D1CB2BAA1D0E001CBD30 /* RegistrationViewController.swift in Sources */,
 				0152D1AA2BAA0246001CBD30 /* Closures.swift in Sources */,

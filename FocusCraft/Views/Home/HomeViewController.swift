@@ -11,23 +11,12 @@ import LZViewPager
 class HomeViewController: UIViewController {
     
     lazy var customHeader = Header()
+    lazy var module = TaskFactory()
     
     lazy var viewPager: LZViewPager = {
         let viewPager = LZViewPager()
         viewPager.translatesAutoresizingMaskIntoConstraints = false
         return viewPager
-    }()
-    
-    lazy var testViewController: UIViewController = {
-        let viewController = UIViewController()
-        viewController.title = "Work"
-        return viewController
-    }()
-    
-    lazy var testViewController2: UIViewController = {
-        let viewController = UIViewController()
-        viewController.title = "All"
-        return viewController
     }()
     
     private var subcontrollers: [UIViewController] = []
@@ -43,9 +32,16 @@ class HomeViewController: UIViewController {
         
         self.setupHeader()
         self.viewPagerSetup()
+        self.setupViewControllers()
         
-        subcontrollers.append(testViewController)
-        subcontrollers.append(testViewController2)
+    }
+    
+    private func setupViewControllers() {
+        let allTaskViewController = module.createAllTasksViewController()
+        let workViewController = module.createWorkViewController()
+        let otherTasksViewController = module.createOtherTasksViewController()
+        
+        self.subcontrollers = [allTaskViewController, workViewController, otherTasksViewController]
         viewPager.reload()
     }
     
@@ -64,8 +60,9 @@ class HomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             viewPager.topAnchor.constraint(equalTo: customHeader.bottomAnchor),
-            viewPager.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 22),
-            viewPager.widthAnchor.constraint(equalToConstant: view.frame.width * 0.7)
+            viewPager.leftAnchor.constraint(equalTo: view.leftAnchor),
+            viewPager.rightAnchor.constraint(equalTo: view.rightAnchor),
+            viewPager.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -73,7 +70,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: LZViewPagerDelegate, LZViewPagerDataSource {
     func numberOfItems() -> Int {
-        return 2
+        return subcontrollers.count
     }
     
     func controller(at index: Int) -> UIViewController {
@@ -83,8 +80,25 @@ extension HomeViewController: LZViewPagerDelegate, LZViewPagerDataSource {
     func button(at index: Int) -> UIButton {
         let button = UIButton()
         button.setTitleColor(UIColor.black, for: .normal)
-        button.titleLabel?.font = AppFont.createFont(type: .bold)
+        button.titleLabel?.font = AppFont.createFont(type: .medium, size: 18)
         return button
+    }
+    
+    func widthForButton(at index: Int) -> CGFloat {
+        let width = ((subcontrollers[index].title?.count ?? 0) * 10) + 50
+        return CGFloat(width)
+    }
+    
+    func leftMarginForHeader() -> CGFloat {
+        return 22
+    }
+    
+    func colorForSeparator() -> UIColor {
+        return AppColors.lightGray
+    }
+    
+    func heightForSeparator() -> CGFloat {
+        return 2
     }
     
     func colorForIndicator(at index: Int) -> UIColor {
@@ -92,14 +106,11 @@ extension HomeViewController: LZViewPagerDelegate, LZViewPagerDataSource {
     }
     
     func heightForIndicator() -> CGFloat {
-        return 3
+        return 5
     }
     
     func shouldShowSeparator() -> Bool {
         return true
     }
-    
-    func cornerRadiusForIndicator() -> CGFloat {
-        return 1.5
-    }
+
 }
