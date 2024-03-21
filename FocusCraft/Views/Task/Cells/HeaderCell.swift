@@ -39,15 +39,15 @@ class HeaderCell: UITableViewCell {
     }
     
     func setupElements() {
-        contentView.addSubview(sectionLabel)
-        contentView.addSubview(sectionPointer)
+        self.addSubview(sectionLabel)
+        self.addSubview(sectionPointer)
         
         NSLayoutConstraint.activate([
-            sectionLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            sectionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 22),
+            sectionLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            sectionLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
             
             sectionPointer.leftAnchor.constraint(equalTo: sectionLabel.rightAnchor, constant: 10),
-            sectionPointer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            sectionPointer.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     

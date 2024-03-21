@@ -27,11 +27,24 @@ class Header: UIView {
         return label
     }()
     
+    lazy var menuButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(.menu, for: .normal)
+        button.tintColor = AppColors.dark
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        return button
+    }()
+    
     init() {
         super.init(frame: .zero)
         
         self.setupHeader()
         self.setupAppEmblem()
+        self.setupProfileButton()
+        self.setActionsForButton()
     }
     
     private func setupHeader() {
@@ -56,6 +69,30 @@ class Header: UIView {
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             stackView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22)
         ])
+    }
+    
+    private func setupProfileButton() {
+        self.addSubview(menuButton)
+        
+        NSLayoutConstraint.activate([
+            menuButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -22),
+            menuButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
+    
+    func setActionsForButton() {
+        let showProfile = UIAction(title: "Profile", image: UIImage(systemName: "person")) { action in
+            print("profile")
+        }
+        
+        let exitFromAccount = UIAction(title: "Exit", image: UIImage(systemName: "door.right.hand.open")) { action in
+            print("exit")
+        }
+        
+        let menu = UIMenu(children: [showProfile, exitFromAccount])
+        
+        menuButton.menu = menu
+        menuButton.showsMenuAsPrimaryAction = true
     }
     
     required init?(coder: NSCoder) {

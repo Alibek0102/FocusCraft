@@ -44,6 +44,8 @@
 		01F5D9F12BAC2741009F24CD /* OtherTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F02BAC2741009F24CD /* OtherTasksViewController.swift */; };
 		01F5D9F32BAC27F5009F24CD /* TaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F22BAC27F5009F24CD /* TaskFactory.swift */; };
 		01F5D9F72BAC33AF009F24CD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */; };
+		01F5D9F92BAC6B04009F24CD /* TaskItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9F82BAC6B04009F24CD /* TaskItemCell.swift */; };
+		01F5D9FB2BAC6BC5009F24CD /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9FA2BAC6BC5009F24CD /* CheckBox.swift */; };
 		900BA9EAC7BC633E58C1AFAF /* Pods_FocusCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		01F5D9F02BAC2741009F24CD /* OtherTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTasksViewController.swift; sourceTree = "<group>"; };
 		01F5D9F22BAC27F5009F24CD /* TaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFactory.swift; sourceTree = "<group>"; };
 		01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		01F5D9F82BAC6B04009F24CD /* TaskItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemCell.swift; sourceTree = "<group>"; };
+		01F5D9FA2BAC6BC5009F24CD /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		1F839021D4159BC88FAD2509 /* Pods-FocusCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.debug.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.debug.xcconfig"; sourceTree = "<group>"; };
 		33CA11869971B7F0E35FA7BC /* Pods-FocusCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocusCraft.release.xcconfig"; path = "Target Support Files/Pods-FocusCraft/Pods-FocusCraft.release.xcconfig"; sourceTree = "<group>"; };
 		608013548AC625E0534F1F7D /* Pods_FocusCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,7 @@
 				0152D1C62BAA1667001CBD30 /* AuthButton.swift */,
 				0152D1C82BAA1C51001CBD30 /* CustomAttributedText.swift */,
 				01F5D9E32BAB851C009F24CD /* Header.swift */,
+				01F5D9FA2BAC6BC5009F24CD /* CheckBox.swift */,
 			);
 			path = ViewBuilder;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				01F5D9F62BAC33AF009F24CD /* HeaderCell.swift */,
+				01F5D9F82BAC6B04009F24CD /* TaskItemCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				0152D1C32BAA1222001CBD30 /* UIColor+Extension.swift in Sources */,
 				017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */,
 				0152D1AE2BAA034E001CBD30 /* AuthentificationFactory.swift in Sources */,
+				01F5D9FB2BAC6BC5009F24CD /* CheckBox.swift in Sources */,
 				018709EF2BA9FF5A00B070E7 /* MainCoordinator.swift in Sources */,
 				01F5D9F32BAC27F5009F24CD /* TaskFactory.swift in Sources */,
 				01F5D9E72BAC268B009F24CD /* Section.swift in Sources */,
@@ -519,6 +526,7 @@
 				018709CE2BA9FD3800B070E7 /* AppDelegate.swift in Sources */,
 				018709D02BA9FD3800B070E7 /* SceneDelegate.swift in Sources */,
 				0152D1CF2BAA2277001CBD30 /* UINavigationController+Extension.swift in Sources */,
+				01F5D9F92BAC6B04009F24CD /* TaskItemCell.swift in Sources */,
 				0152D1C02BAA1123001CBD30 /* AppColors.swift in Sources */,
 				01F5D9EF2BAC2731009F24CD /* WorkViewController.swift in Sources */,
 				0152D1C92BAA1C51001CBD30 /* CustomAttributedText.swift in Sources */,

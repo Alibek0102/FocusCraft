@@ -19,6 +19,10 @@ class HomeViewController: UIViewController {
         return viewPager
     }()
     
+//    lazy var addTaskButton: UIButton = {
+//        
+//    }()
+    
     private var subcontrollers: [UIViewController] = []
     
     override func viewDidLoad() {
