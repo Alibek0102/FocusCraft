@@ -12,5 +12,6 @@ class AppColors {
     static var gray = UIColor(hexString: "#575555")
     static var dark = UIColor(hexString: "#050505")
     static var pageGray = UIColor(hexString: "#f9f9f9")
+    static var denim = UIColor(hexString: "#1d1f24")
 }
 

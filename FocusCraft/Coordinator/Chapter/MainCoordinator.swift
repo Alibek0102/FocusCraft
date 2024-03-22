@@ -25,9 +25,9 @@ class MainCoordinator: Coordinator, SubCoordinator {
     func startEvent(event: HomeScreenEvents) {
         switch event {
         case .addTask:
-            print("add task")
+            self.createTask()
         case .exit:
-            finishFLow?(true)
+            self.finishFLow?(true)
         case .profile:
             print("profile")
         }
@@ -40,6 +40,12 @@ class MainCoordinator: Coordinator, SubCoordinator {
         }
         
         navigationController.navigate(viewController: viewController, type: .set)
+    }
+    
+    private func createTask() {
+        let viewController = module.createEditTaskViewController()
+        viewController.modalPresentationStyle = .currentContext
+        navigationController.present(viewController, animated: true)
     }
     
     

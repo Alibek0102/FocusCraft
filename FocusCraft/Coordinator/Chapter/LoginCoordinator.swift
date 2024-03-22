@@ -33,7 +33,7 @@ class LoginCoordinator: Coordinator, SubCoordinator, AuthCoordinator {
         }
     }
     
-    private func loginScreen(_ type: NavigationType = .push) {
+    private func loginScreen(_ type: NavigationType = .set) {
         let viewController = module.createLoginViewController()
         viewController.coordinator = self
         

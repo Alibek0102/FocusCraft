@@ -18,7 +18,7 @@ extension UINavigationController {
         switch type {
         case .set:
             if let vc = viewController {
-                self.setViewControllers([vc], animated: true)
+                self.setViewControllers([vc], animated: false)
             }
             break
         case .push:

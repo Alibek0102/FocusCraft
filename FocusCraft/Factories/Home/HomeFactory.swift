@@ -14,4 +14,9 @@ class HomeFactory {
         return viewController
     }
     
+    func createEditTaskViewController() -> CreateTaskViewController {
+        let viewController = CreateTaskViewController()
+        return viewController
+    }
+    
 }

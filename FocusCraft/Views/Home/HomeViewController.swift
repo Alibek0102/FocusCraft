@@ -21,6 +21,32 @@ class HomeViewController: UIViewController {
         return viewPager
     }()
     
+    lazy var addTaskButton: UIButton = {
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "plus")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let button = UIButton()
+        button.backgroundColor = AppColors.denim
+        button.layer.cornerRadius = 30
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        button.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 30),
+            imageView.heightAnchor.constraint(equalToConstant: 30),
+            imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor)
+        ])
+        
+        return button
+    }()
+    
     private var subcontrollers: [UIViewController] = []
     
     override func viewDidLoad() {
@@ -35,6 +61,7 @@ class HomeViewController: UIViewController {
         self.setupHeader()
         self.viewPagerSetup()
         self.setupViewControllers()
+        self.setupAddTaskButton()
         
         customHeader.menuClosure = { event in
             switch event {
@@ -45,6 +72,11 @@ class HomeViewController: UIViewController {
             }
         }
         
+        addTaskButton.addTarget(self, action: #selector(showCreateTaskView), for: .touchUpInside)
+    }
+    
+    @objc private func showCreateTaskView() {
+        self.homeScreenEvents?(.addTask)
     }
     
     private func setupViewControllers() {
@@ -77,6 +109,15 @@ class HomeViewController: UIViewController {
         ])
     }
     
+    private func setupAddTaskButton() {
+        view.addSubview(addTaskButton)
+        
+        NSLayoutConstraint.activate([
+            addTaskButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            addTaskButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
 }
 
 extension HomeViewController: LZViewPagerDelegate, LZViewPagerDataSource {
@@ -87,8 +128,8 @@ extension HomeViewController: LZViewPagerDelegate, LZViewPagerDataSource {
     func controller(at index: Int) -> UIViewController {
         return subcontrollers[index]
     }
-    
-    func button(at index: Int) -> UIButton {
+
+    func button(at index: Int) -> UIButton {        
         let button = UIButton()
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = AppFont.createFont(type: .medium, size: 18)
