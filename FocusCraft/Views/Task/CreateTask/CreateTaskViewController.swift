@@ -31,11 +31,32 @@ class CreateTaskViewController: UIViewController {
         return textView
     }()
     
+    lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.tintColor = AppColors.gray
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return datePicker
+    }()
+    
+    lazy var submitButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add New Task", for: .normal)
+        button.backgroundColor = AppColors.denim
+        button.layer.cornerRadius = 10
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         view.backgroundColor = .white
         
         self.setupHeader()
         self.setupTextView()
+        self.setupDatePickerAndButton()
         
         header.finishFlow = { result in
             if result {
@@ -67,6 +88,24 @@ class CreateTaskViewController: UIViewController {
             textView.topAnchor.constraint(equalTo: textViewDescription.bottomAnchor, constant: 5),
             textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 22),
             textView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -22)
+        ])
+    }
+    
+    
+    
+    private func setupDatePickerAndButton() {
+        view.addSubview(datePicker)
+        view.addSubview(submitButton)
+        
+        NSLayoutConstraint.activate([
+            datePicker.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 15),
+            datePicker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 22),
+            datePicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -22),
+            
+            submitButton.heightAnchor.constraint(equalToConstant: 50),
+            submitButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 22),
+            submitButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -22),
+            submitButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -20)
         ])
     }
     
