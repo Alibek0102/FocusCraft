@@ -7,10 +7,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
+class LoginViewController: UIViewController, LoginViewProtocol {
+
     var coordinator: AuthCoordinator?
     var finishFlow: boolClosure?
+    var presenter: LoginPresenterProtocol?
     
     lazy var appIcon = AppIcon()
     
@@ -81,7 +82,28 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func login() {
-        self.finishFlow?(true)
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        self.presenter?.signIn(email: email, password: password)
     }
     
+}
+
+extension LoginViewController {
+    func authHandler(result: LoginValidationResponse) {
+        switch result.state {
+        case .emailUncorrect:
+            print("неправильный email")
+        case .passwordUncorrect:
+            print("неправильный пароль или email")
+        case .emailHaveSpace:
+            print("неправильный пароль или email")
+        case .passwordHaveSpace:
+            print("неправильный пароль или email")
+        case .passwordMinLength:
+            print("неправильный пароль или email")
+        case .success:
+            self.finishFlow?(true)
+        }
+    }
 }

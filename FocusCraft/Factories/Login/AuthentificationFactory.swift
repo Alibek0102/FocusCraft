@@ -11,6 +11,8 @@ class AuthentificationFactory {
     
     func createLoginViewController() -> LoginViewController {
         let viewController = LoginViewController()
+        let presenter = LoginPresenter(view: viewController)
+        viewController.presenter = presenter
         return viewController
     }
     
