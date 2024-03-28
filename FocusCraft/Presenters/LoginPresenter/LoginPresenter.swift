@@ -16,10 +16,15 @@ final class LoginPresenter: LoginPresenterProtocol {
     }
     
     func signIn(email: String, password: String){
+        view.loaderHandler(true)
+        
         guard checkEmail(email) == true else { return }
         guard checkPassword(password) == true else { return }
         
         AuthentificationService.shared.signIn(email: email, password: password) { response in
+            
+            self.view.loaderHandler(false)
+            
             switch response {
             case .success:
                 self.showState(state: LoginValidationResponse(state: .success, color: .green))

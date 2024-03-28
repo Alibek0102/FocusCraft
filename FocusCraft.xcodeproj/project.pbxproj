@@ -72,6 +72,8 @@
 		018709F52BA9FF8A00B070E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709F42BA9FF8A00B070E7 /* LoginViewController.swift */; };
 		01CADCF22BAD47EC00748265 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CADCF12BAD47EC00748265 /* CreateTaskViewController.swift */; };
 		01CADCF42BAD4A5800748265 /* HeaderWithCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CADCF32BAD4A5800748265 /* HeaderWithCloseButton.swift */; };
+		01F4C0002BB593DF006E9A60 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 01F4BFFF2BB593DF006E9A60 /* Toast */; };
+		01F4C0032BB59777006E9A60 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 01F4C0022BB59777006E9A60 /* JGProgressHUD */; };
 		01F5D9E42BAB851C009F24CD /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9E32BAB851C009F24CD /* Header.swift */; };
 		01F5D9E72BAC268B009F24CD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9E62BAC268B009F24CD /* Section.swift */; };
 		01F5D9ED2BAC2726009F24CD /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5D9EC2BAC2726009F24CD /* AllTasksViewController.swift */; };
@@ -152,6 +154,7 @@
 				013147592BB413EE00419520 /* FirebaseDatabaseSwift in Frameworks */,
 				013147692BB413EE00419520 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				0131476F2BB413EE00419520 /* FirebaseMessaging in Frameworks */,
+				01F4C0032BB59777006E9A60 /* JGProgressHUD in Frameworks */,
 				0131474F2BB413EE00419520 /* FirebaseAppDistribution-Beta in Frameworks */,
 				013147532BB413EE00419520 /* FirebaseAuthCombine-Community in Frameworks */,
 				0131475F2BB413EE00419520 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -170,6 +173,7 @@
 				013147732BB413EE00419520 /* FirebaseRemoteConfig in Frameworks */,
 				013147772BB413EE00419520 /* FirebaseStorage in Frameworks */,
 				013147572BB413EE00419520 /* FirebaseDatabase in Frameworks */,
+				01F4C0002BB593DF006E9A60 /* Toast in Frameworks */,
 				013147792BB413EE00419520 /* FirebaseStorageCombine-Community in Frameworks */,
 				900BA9EAC7BC633E58C1AFAF /* Pods_FocusCraft.framework in Frameworks */,
 				013147512BB413EE00419520 /* FirebaseAuth in Frameworks */,
@@ -560,6 +564,8 @@
 				013147742BB413EE00419520 /* FirebaseRemoteConfigSwift */,
 				013147762BB413EE00419520 /* FirebaseStorage */,
 				013147782BB413EE00419520 /* FirebaseStorageCombine-Community */,
+				01F4BFFF2BB593DF006E9A60 /* Toast */,
+				01F4C0022BB59777006E9A60 /* JGProgressHUD */,
 			);
 			productName = FocusCraft;
 			productReference = 018709CA2BA9FD3800B070E7 /* FocusCraft.app */;
@@ -591,6 +597,8 @@
 			mainGroup = 018709C12BA9FD3800B070E7;
 			packageReferences = (
 				013147432BB413EE00419520 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				01F4BFFE2BB593DF006E9A60 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				01F4C0012BB59777006E9A60 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 018709CB2BA9FD3800B070E7 /* Products */;
 			projectDirPath = "";
@@ -931,6 +939,22 @@
 				minimumVersion = 10.23.0;
 			};
 		};
+		01F4BFFE2BB593DF006E9A60 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		01F4C0012BB59777006E9A60 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1068,6 +1092,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 013147432BB413EE00419520 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		01F4BFFF2BB593DF006E9A60 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01F4BFFE2BB593DF006E9A60 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		01F4C0022BB59777006E9A60 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01F4C0012BB59777006E9A60 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

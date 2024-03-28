@@ -15,6 +15,7 @@ protocol LoginViewProtocol {
     var presenter: LoginPresenterProtocol? { get set }
     
     func authHandler(result: LoginValidationResponse)
+    func loaderHandler(_ loader: Bool)
 }
 
 protocol LoginPresenterStateProtocol {

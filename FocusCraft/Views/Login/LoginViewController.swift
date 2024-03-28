@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Toast
+import JGProgressHUD
 
 class LoginViewController: UIViewController, LoginViewProtocol {
 
@@ -14,6 +16,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     var presenter: LoginPresenterProtocol?
     
     lazy var appIcon = AppIcon()
+    
+    let loader = JGProgressHUD()
     
     lazy var emailStack = TextFieldStack(title: "Email")
     lazy var emailTextField = CustomTextField(placeholder: "Enter your email")
@@ -30,9 +34,11 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         
         view.backgroundColor = .white
         
-        setupElements()
-        signUpLabelSettings()
-        authButtonSettings()
+        self.setupElements()
+        self.signUpLabelSettings()
+        self.authButtonSettings()
+        self.setupToast()
+        self.setupLoader()
     }
     
     func signUpLabelSettings() {
@@ -43,6 +49,11 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     func authButtonSettings() {
         authButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+    }
+    
+    func setupLoader() {
+        loader.textLabel.text = "Loading..."
+        loader.backgroundColor = .black.withAlphaComponent(0.7)
     }
     
     func setupElements() {
@@ -90,18 +101,50 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 }
 
 extension LoginViewController {
+    
+    func showToastErrorMessage(text: String) {
+        self.view.makeToast(text, duration: 3, position: .top)
+    }
+    
+    func showLoader() {
+        loader.show(in: view, animated: true)
+    }
+    
+    func dissmissLoader() {
+        loader.dismiss(animated: true)
+    }
+    
+    func loaderHandler(_ loader: Bool) {
+        if loader == true {
+            self.showLoader()
+        } else {
+            self.dissmissLoader()
+        }
+    }
+    
+    func setupToast() {
+        var style = ToastStyle()
+        style.cornerRadius = 15
+        style.backgroundColor = .red
+        style.horizontalPadding = 20
+        style.messageFont = AppFont.createFont(type: .medium, size: 18)
+        style.fadeDuration = 0.5
+        
+        ToastManager.shared.style = style
+    }
+    
     func authHandler(result: LoginValidationResponse) {
         switch result.state {
         case .emailUncorrect:
-            print("неправильный email")
+            self.showToastErrorMessage(text: "Uncorrect email")
         case .passwordUncorrect:
-            print("неправильный пароль или email")
+            self.showToastErrorMessage(text: "Uncorrect email or password")
         case .emailHaveSpace:
-            print("неправильный пароль или email")
+            self.showToastErrorMessage(text: "Email should not contain spaces")
         case .passwordHaveSpace:
-            print("неправильный пароль или email")
+            self.showToastErrorMessage(text: "Email should not contain spaces")
         case .passwordMinLength:
-            print("неправильный пароль или email")
+            self.showToastErrorMessage(text: "Email should not contain spaces")
         case .success:
             self.finishFlow?(true)
         }
