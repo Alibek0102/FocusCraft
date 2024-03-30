@@ -10,6 +10,7 @@ import Foundation
 final class LoginPresenter: LoginPresenterProtocol {
     
     var view: LoginViewProtocol
+    lazy var validator = AuthentificationValidator()
     
     init(view: LoginViewProtocol) {
         self.view = view
@@ -18,8 +19,14 @@ final class LoginPresenter: LoginPresenterProtocol {
     func signIn(email: String, password: String){
         view.loaderHandler(true)
         
-        guard checkEmail(email) == true else { return }
-        guard checkPassword(password) == true else { return }
+        guard checkEmail(email) == true else { 
+            view.loaderHandler(false)
+            return
+        }
+        guard checkPassword(password) == true else { 
+            view.loaderHandler(false)
+            return
+        }
         
         AuthentificationService.shared.signIn(email: email, password: password) { response in
             
@@ -33,18 +40,19 @@ final class LoginPresenter: LoginPresenterProtocol {
             case .serverError:
                 self.showState(state: LoginValidationResponse(state: .passwordUncorrect, color: .red))
             }
+            
         }
     }
 }
 
-extension LoginPresenter: LoginPresenterStateProtocol {
+extension LoginPresenter: AuthPresentersStateProtocol {
     func checkEmail(_ email: String) -> Bool {
-        if !emailHasNotSpace(email) {
+        if !validator.emailHasNotSpace(email) {
             let response = LoginValidationResponse(state: .emailHaveSpace, color: .red)
             self.showState(state: response)
             return false
         }
-        if !emailValidator(email) {
+        if !validator.emailValidator(email) {
             let response = LoginValidationResponse(state: .emailUncorrect, color: .red)
             self.showState(state: response)
             return false
@@ -54,17 +62,17 @@ extension LoginPresenter: LoginPresenterStateProtocol {
     }
     
     func checkPassword(_ password: String) -> Bool {
-        if !passwordValidator(password) {
+        if !validator.passwordValidator(password) {
             let response = LoginValidationResponse(state: .passwordUncorrect, color: .red)
             self.showState(state: response)
             return false
         }
-        if !passwordHasNotSpace(password) {
+        if !validator.passwordHasNotSpace(password) {
             let response = LoginValidationResponse(state: .passwordHaveSpace, color: .red)
             self.showState(state: response)
             return false
         }
-        if !isPasswordLengthValid(password) {
+        if !validator.isPasswordLengthValid(password) {
             let response = LoginValidationResponse(state: .passwordMinLength, color: .red)
             self.showState(state: response)
             return false
@@ -78,31 +86,3 @@ extension LoginPresenter: LoginPresenterStateProtocol {
     }
 }
 
-extension LoginPresenter: LoginValidatorProtocol {
-    
-    func emailValidator(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    
-    func emailHasNotSpace(_ email: String) -> Bool {
-        if email.contains(" ") { return false }
-        return true
-    }
-    
-    func passwordValidator(_ password: String) -> Bool {
-        return true
-    }
-    
-    func passwordHasNotSpace(_ password: String) -> Bool {
-        if password.contains(" ") { return false }
-        return true
-    }
-    
-    func isPasswordLengthValid(_ password: String) -> Bool {
-        if password.count < 8 { return false }
-        return true
-    }
-    
-}

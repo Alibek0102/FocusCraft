@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import JGProgressHUD
+import Toast
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, RegistrationViewProtocol {
+    var presenter: RegistrationPresenterProtocol?
     
     var coordinator: AuthCoordinator?
     var finishFlow: boolClosure?
+    
+    let loader = JGProgressHUD()
     
     lazy var appIcon = AppIcon()
     
@@ -35,12 +40,19 @@ class RegistrationViewController: UIViewController {
         setupElements()
         signInLabelSettings()
         signUpButtonSettings()
+        setupToast()
+        setupLoader()
     }
     
     private func signInLabelSettings() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(navigationManager))
         toSignInLabel.isUserInteractionEnabled = true
         toSignInLabel.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    private func setupLoader() {
+        loader.textLabel.text = "Loading..."
+        loader.backgroundColor = .black.withAlphaComponent(0.7)
     }
     
     private func signUpButtonSettings() {
@@ -86,12 +98,68 @@ class RegistrationViewController: UIViewController {
         
     }
     
+    func setupToast() {
+        var style = ToastStyle()
+        style.cornerRadius = 15
+        style.backgroundColor = .red
+        style.horizontalPadding = 20
+        style.messageFont = AppFont.createFont(type: .medium, size: 18)
+        style.fadeDuration = 0.5
+        
+        ToastManager.shared.style = style
+    }
+
+    
     @objc private func navigationManager() {
         coordinator?.navigate(type: .login, router: .pop)
     }
     
     @objc private func signUp() {
-        self.finishFlow?(true)
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let passwordSecond = confirmPasswordTextField.text ?? ""
+        
+        presenter?.signUp(email: email, password: password, secondPassword: passwordSecond)
     }
     
+}
+
+extension RegistrationViewController {
+    
+    func showToastErrorMessage(text: String) {
+        self.view.makeToast(text, duration: 3, position: .top)
+    }
+    
+    func showLoader() {
+        loader.show(in: view, animated: true)
+    }
+    
+    func dissmissLoader() {
+        loader.dismiss(animated: true)
+    }
+    
+    func authHandler(result: LoginValidationResponse) {
+        switch result.state {
+        case .emailUncorrect:
+            self.showToastErrorMessage(text: "Uncorrect email")
+        case .passwordUncorrect:
+            self.showToastErrorMessage(text: "Uncorrect email or password")
+        case .emailHaveSpace:
+            self.showToastErrorMessage(text: "Email should not contain spaces")
+        case .passwordHaveSpace:
+            self.showToastErrorMessage(text: "Password should not contain spaces")
+        case .passwordMinLength:
+            self.showToastErrorMessage(text: "Email should not contain spaces")
+        case .success:
+            self.finishFlow?(true)
+        }
+    }
+    
+    func loaderHandler(_ loader: Bool) {
+        if loader {
+            showLoader()
+        } else {
+            dissmissLoader()
+        }
+    }
 }

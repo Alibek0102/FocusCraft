@@ -51,7 +51,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         authButton.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
     
-    func setupLoader() {
+    private func setupLoader() {
         loader.textLabel.text = "Loading..."
         loader.backgroundColor = .black.withAlphaComponent(0.7)
     }
@@ -142,7 +142,7 @@ extension LoginViewController {
         case .emailHaveSpace:
             self.showToastErrorMessage(text: "Email should not contain spaces")
         case .passwordHaveSpace:
-            self.showToastErrorMessage(text: "Email should not contain spaces")
+            self.showToastErrorMessage(text: "Password should not contain spaces")
         case .passwordMinLength:
             self.showToastErrorMessage(text: "Email should not contain spaces")
         case .success:

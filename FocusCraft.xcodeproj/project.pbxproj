@@ -59,6 +59,8 @@
 		0152D1CF2BAA2277001CBD30 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CE2BAA2277001CBD30 /* UINavigationController+Extension.swift */; };
 		017314702BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0173146F2BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift */; };
 		017314722BB88A1B00FCDE79 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017314712BB88A1B00FCDE79 /* RegistrationPresenter.swift */; };
+		017314752BB88BAE00FCDE79 /* AuthentificationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017314742BB88BAE00FCDE79 /* AuthentificationValidator.swift */; };
+		017314772BB88CB900FCDE79 /* AuthentificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017314762BB88CB900FCDE79 /* AuthentificationProtocols.swift */; };
 		017517722BAB798300E876C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017517712BAB798300E876C2 /* HomeViewController.swift */; };
 		017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017517742BAB79E500E876C2 /* HomeFactory.swift */; };
 		018709CE2BA9FD3800B070E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709CD2BA9FD3800B070E7 /* AppDelegate.swift */; };
@@ -116,6 +118,8 @@
 		0152D1CE2BAA2277001CBD30 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		0173146F2BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenterProtocols.swift; sourceTree = "<group>"; };
 		017314712BB88A1B00FCDE79 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		017314742BB88BAE00FCDE79 /* AuthentificationValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationValidator.swift; sourceTree = "<group>"; };
+		017314762BB88CB900FCDE79 /* AuthentificationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationProtocols.swift; sourceTree = "<group>"; };
 		017517712BAB798300E876C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		017517742BAB79E500E876C2 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		018709CA2BA9FD3800B070E7 /* FocusCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +216,6 @@
 			children = (
 				0131477E2BB4197C00419520 /* LoginPresenter.swift */,
 				013147822BB41A3600419520 /* LoginPresenterProtocols.swift */,
-				011FAA052BB52EB200881454 /* LoginState.swift */,
 			);
 			path = LoginPresenter;
 			sourceTree = "<group>";
@@ -291,6 +294,16 @@
 				0173146F2BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift */,
 			);
 			path = RegistrationPresenter;
+			sourceTree = "<group>";
+		};
+		017314732BB88B6300FCDE79 /* AuthentificationValidator */ = {
+			isa = PBXGroup;
+			children = (
+				017314742BB88BAE00FCDE79 /* AuthentificationValidator.swift */,
+				017314762BB88CB900FCDE79 /* AuthentificationProtocols.swift */,
+				011FAA052BB52EB200881454 /* LoginState.swift */,
+			);
+			path = AuthentificationValidator;
 			sourceTree = "<group>";
 		};
 		017517702BAB795F00E876C2 /* Home */ = {
@@ -385,6 +398,7 @@
 		018709E42BA9FD8400B070E7 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				017314732BB88B6300FCDE79 /* AuthentificationValidator */,
 				0173146E2BB877D400FCDE79 /* RegistrationPresenter */,
 				0131477D2BB4196800419520 /* LoginPresenter */,
 			);
@@ -697,6 +711,7 @@
 				01F5D9F12BAC2741009F24CD /* OtherTasksViewController.swift in Sources */,
 				0152D1C32BAA1222001CBD30 /* UIColor+Extension.swift in Sources */,
 				017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */,
+				017314772BB88CB900FCDE79 /* AuthentificationProtocols.swift in Sources */,
 				0152D1AE2BAA034E001CBD30 /* AuthentificationFactory.swift in Sources */,
 				01F5D9FB2BAC6BC5009F24CD /* CheckBox.swift in Sources */,
 				01F5DA012BAC8253009F24CD /* HomeScreenEvents.swift in Sources */,
@@ -729,6 +744,7 @@
 				01F5D9EF2BAC2731009F24CD /* WorkViewController.swift in Sources */,
 				0152D1C92BAA1C51001CBD30 /* CustomAttributedText.swift in Sources */,
 				0152D1CB2BAA1D0E001CBD30 /* RegistrationViewController.swift in Sources */,
+				017314752BB88BAE00FCDE79 /* AuthentificationValidator.swift in Sources */,
 				0152D1AA2BAA0246001CBD30 /* Closures.swift in Sources */,
 				0152D1BE2BAA0F75001CBD30 /* CustomTextField.swift in Sources */,
 			);

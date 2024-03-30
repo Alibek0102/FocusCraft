@@ -18,6 +18,8 @@ class AuthentificationFactory {
     
     func createRegistrationScreen() -> RegistrationViewController {
         let viewController = RegistrationViewController()
+        var presenter = RegistrationPresenter(view: viewController)
+        viewController.presenter = presenter
         return viewController
     }
     
