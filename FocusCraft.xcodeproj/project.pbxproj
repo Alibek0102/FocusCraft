@@ -57,6 +57,8 @@
 		0152D1CB2BAA1D0E001CBD30 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CA2BAA1D0E001CBD30 /* RegistrationViewController.swift */; };
 		0152D1CD2BAA1E18001CBD30 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CC2BAA1E18001CBD30 /* AuthCoordinator.swift */; };
 		0152D1CF2BAA2277001CBD30 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152D1CE2BAA2277001CBD30 /* UINavigationController+Extension.swift */; };
+		017314702BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0173146F2BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift */; };
+		017314722BB88A1B00FCDE79 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017314712BB88A1B00FCDE79 /* RegistrationPresenter.swift */; };
 		017517722BAB798300E876C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017517712BAB798300E876C2 /* HomeViewController.swift */; };
 		017517752BAB79E500E876C2 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017517742BAB79E500E876C2 /* HomeFactory.swift */; };
 		018709CE2BA9FD3800B070E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018709CD2BA9FD3800B070E7 /* AppDelegate.swift */; };
@@ -112,6 +114,8 @@
 		0152D1CA2BAA1D0E001CBD30 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		0152D1CC2BAA1E18001CBD30 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		0152D1CE2BAA2277001CBD30 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		0173146F2BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenterProtocols.swift; sourceTree = "<group>"; };
+		017314712BB88A1B00FCDE79 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		017517712BAB798300E876C2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		017517742BAB79E500E876C2 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		018709CA2BA9FD3800B070E7 /* FocusCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +284,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0173146E2BB877D400FCDE79 /* RegistrationPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				017314712BB88A1B00FCDE79 /* RegistrationPresenter.swift */,
+				0173146F2BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift */,
+			);
+			path = RegistrationPresenter;
+			sourceTree = "<group>";
+		};
 		017517702BAB795F00E876C2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +385,7 @@
 		018709E42BA9FD8400B070E7 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				0173146E2BB877D400FCDE79 /* RegistrationPresenter */,
 				0131477D2BB4196800419520 /* LoginPresenter */,
 			);
 			path = Presenters;
@@ -673,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0131477F2BB4197C00419520 /* LoginPresenter.swift in Sources */,
+				017314722BB88A1B00FCDE79 /* RegistrationPresenter.swift in Sources */,
 				018709F52BA9FF8A00B070E7 /* LoginViewController.swift in Sources */,
 				01F5D9ED2BAC2726009F24CD /* AllTasksViewController.swift in Sources */,
 				0152D1A72BAA020D001CBD30 /* SubCoordinator.swift in Sources */,
@@ -694,6 +709,7 @@
 				01F5D9FF2BAC8116009F24CD /* MenuEvents.swift in Sources */,
 				01F5D9E72BAC268B009F24CD /* Section.swift in Sources */,
 				0152D1C72BAA1667001CBD30 /* AuthButton.swift in Sources */,
+				017314702BB877ED00FCDE79 /* RegistrationPresenterProtocols.swift in Sources */,
 				013147402BB4102300419520 /* AuthentificationService.swift in Sources */,
 				0152D1B12BAA067D001CBD30 /* AppIcon.swift in Sources */,
 				018709E72BA9FDCA00B070E7 /* AppCoordinator.swift in Sources */,
